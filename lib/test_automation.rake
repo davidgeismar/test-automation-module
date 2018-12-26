@@ -1,6 +1,8 @@
 require_relative "folder_explorer"
 require_relative "test_file"
 require_relative "test_automation"
+strategies_folder = "#{TestAutomation::Configuration.instance.options[:load_path].to_s}/*"
+Dir[strategies_folder].each {|file| require file}
 
 
 include FolderExplorer
@@ -10,7 +12,7 @@ namespace :specs do
 
   desc 'write tests'
   task write_tests: :environment do
-    TestAutomation::Configuration.instance.options.each do |options|
+    TestAutomation::Configuration.instance.options[:strategies].each do |options|
       origin = options[:origin].to_s
       destination = options[:destination].to_s
       models = retrieve_filenames_without_ext(origin, Proc.new {|filename| filename.split("/")[-1][0..-4]})

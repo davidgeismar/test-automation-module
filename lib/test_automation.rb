@@ -11,6 +11,7 @@ require_relative('./spec/file/file_spec.rb')
 require_relative('./spec/general/general_spec.rb')
 require_relative('./spec/mongoid/mongoid_spec.rb')
 require_relative('./image_spec_block')
+require_relative('./strategies')
 module TestAutomation
   def self.configure(options = nil, &block)
     if !options.nil?

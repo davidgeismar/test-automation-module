@@ -6,5 +6,6 @@ Gem::Specification.new do |s|
   s.description = "Testing is fun"
   s.authors     = ["David Geismar"]
   s.email       = 'dageismar@gmail.com'
-  s.license       = 'MIT'
+  s.files       = ["lib/test_automation.rb", "lib/test_automation.rake"]
+  s.license     = 'MIT'
 end
